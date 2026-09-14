@@ -7,9 +7,20 @@ public class solution {
         int maxnumberWater = 0;
 
         while(left < right){
-            if(height[left] < height[right]){
-                
-            }
+            
+        int h = Math.min(height[left],height[right]);
+        int width = right - left;
+        int area = h * width;
+
+        maxnumberWater = Math.max(maxnumberWater,area);
+
+        if(height[left] < height[right]){
+            left++;
+        }else{
+            right--;
         }
+            
+        }
+        return maxnumberWater;
     }
 }
